@@ -26,6 +26,10 @@ setup(name='sg.socialsite',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'five.grok',
+          'cioppino.twothumbs',
+          'sg.questions',
+          'sg.pastebin',
       ],
       entry_points="""
       # -*- Entry points: -*-
