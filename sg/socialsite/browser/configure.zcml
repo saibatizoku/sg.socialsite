@@ -6,6 +6,12 @@
     i18n_domain="sg.socialsite">
 
     <!-- -*- extra stuff goes here -*- -->
-
+    <browser:page
+        for="*"
+        name="social_summary_view"
+        permission="zope2.Public"
+        class=".social.SocialSummaryView"
+        template="social_summary_view.pt"
+        />
   
 </configure>
