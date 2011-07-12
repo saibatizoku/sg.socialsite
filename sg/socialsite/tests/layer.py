@@ -20,7 +20,6 @@ class SocialSiteLayer(PloneSite):
     def setUp(cls):
         metaconfigure.debug_mode = True
         import sg.socialsite
-        zcml.load_config('meta.zcml', sg.socialsite)
         zcml.load_config('configure.zcml', sg.socialsite)
         metaconfigure.debug_mode = False
 
