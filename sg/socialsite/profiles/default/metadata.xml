@@ -3,7 +3,7 @@
     <version>1</version>
     <dependencies>
         <dependency>profile-cioppino.twothumbs:default</dependency>
-        <dependency>profile-sg.pastebin:default</default>
-        <dependency>profile-sg.questions:default</default>
+        <dependency>profile-sg.pastebin:default</dependency>
+        <dependency>profile-sg.questions:default</dependency>
     </dependencies>
 </metadata>
