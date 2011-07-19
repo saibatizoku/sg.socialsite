@@ -13,5 +13,13 @@
         class=".social.SocialSummaryView"
         template="social_summary_view.pt"
         />
-  
+
+    <browser:menuItem
+        for="*"
+        menu="plone_displayviews"
+        title="Summary View"
+        action="@@folder_summary_view"
+        description=""
+        />
+
 </configure>
