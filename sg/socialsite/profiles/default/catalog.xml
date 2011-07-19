@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+    <index name="total_ratings" meta_type="FieldIndex">
+        <indexed_attr value="total_ratings"/>
+    </index> 
+    <column value="total_ratings"/>
+</object>

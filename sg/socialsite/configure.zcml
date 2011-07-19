@@ -9,6 +9,8 @@
 
     <include package=".browser" />
 
+    <adapter name="total_ratings" factory=".indexers.total_ratings" />
+
     <genericsetup:registerProfile
         name="default"
         title="sg.socialsite"
