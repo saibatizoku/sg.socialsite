@@ -6,6 +6,11 @@
     i18n_domain="sg.socialsite">
 
     <!-- -*- extra stuff goes here -*- -->
+    <browser:resourceDirectory
+      name="sg.socialsite.javascripts"
+      directory="javascripts"
+      />
+
     <browser:page
         for="*"
         name="folder_summary_view"
@@ -13,6 +18,14 @@
         class=".social.SocialSummaryView"
         template="social_summary_view.pt"
         />
+
+    <browser:page
+      for="*"
+      name="rate-if-you-dare"
+      permission="zope2.View"
+      layer=".interfaces.IThemeSpecific"
+      class=".like.TotalLikeWidgetView"
+      />
 
     <browser:menuItem
         for="*"
