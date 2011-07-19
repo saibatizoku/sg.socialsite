@@ -23,6 +23,7 @@
                             <a href="http://twitter.com/share" class="twitter-share-button"
                                 tal:attributes="data-url item/getURL"
                                 data-via="RevistaSG"
+                                data-lang="es"
                                 data-count="vertical">Tweet</a>
                         </div> 
                      </div>
