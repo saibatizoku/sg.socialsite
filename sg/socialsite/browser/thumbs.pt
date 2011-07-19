@@ -22,8 +22,7 @@
                 class="allowMultiSubmit like-button"
                 i18n:attributes="value"
                 tal:attributes="id  string:${context/id}_submit_like;
-                                    disabled python:not canRate and 'disabled' or '';
-                                    alt  view/getTwoThumbsAlt"/>
+                                    disabled python:not canRate and 'disabled' or '';"/>
         </span>
         <span
             tal:attributes="class   python:'thumbs-down' + (myVote==-1 and ' selected' or '')">
