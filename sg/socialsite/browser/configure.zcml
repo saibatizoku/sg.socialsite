@@ -11,6 +11,24 @@
       directory="javascripts"
       />
 
+    <browser:resource
+        name="comments.jpg"
+        image="comentarios.jpg"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <browser:resource
+        name="code.jpg"
+        image="compartecodigo.jpg"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <browser:resource
+        name="question.jpg"
+        image="preguntas.jpg"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <browser:page
         for="*"
         name="folder_summary_view"

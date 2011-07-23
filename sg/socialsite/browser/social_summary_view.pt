@@ -34,6 +34,16 @@
                         <img src="" alt=""
                              tal:replace="structure python: path('nocall:item_object/tag')(scale='thumb', css_class='tileImage')" />
                     </a>
+                    <a href="#"
+                       tal:condition="not:exists:item_object/image_thumb"
+                       tal:attributes="href string:$item_url">
+                        <img src="" alt="" tal:condition="python: item.Type == str('Code Snippet')"
+                        tal:attributes="src string:$item_url/++resource++code.jpg" />
+                        <img src="" alt="" tal:condition="python: item.Type == str('Question')"
+                        tal:attributes="src string:$item_url/++resource++question.jpg" />
+                        <img src="" alt="" tal:condition="python: item.Type == str('News Item')"
+                        tal:attributes="src string:$item_url/++resource++comments.jpg" />
+                    </a>
 
                     <h2 class="tileHeadline"
                         metal:define-macro="listitem">
