@@ -45,6 +45,14 @@
       class=".like.TotalLikeWidgetView"
       />
 
+    <browser:page
+      for="*"
+      name="newsitem_view"
+      permission="zope2.View"
+      layer=".interfaces.IThemeSpecific"
+      template="news_view.pt"
+      />
+
     <browser:menuItem
         for="*"
         menu="plone_displayviews"
