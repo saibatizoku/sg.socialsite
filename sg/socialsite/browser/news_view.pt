@@ -17,19 +17,19 @@
                     len_text python:len(text.strip())">
 
         <div class="newsImageContainer"
-             tal:condition="context/getImage|nothing"
              tal:define="here_url context/@@plone_context_state/object_url;">
             <a href="#"
                tal:attributes="href string:$here_url/image/image_view_fullscreen"
                id="parent-fieldname-image">
-               <img tal:replace="structure python: context.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+               <img tal:condition="context/getImage|nothing" tal:replace="structure python: context.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+               <img tal:condition="not:context/getImage" tal:attributes="src string:$here_url/++resource++comments.jpg" src="" alt="" />
             </a>
-            <p class="discreet" tal:condition="context/imageCaption|nothing">
+            <tal:ifimg condition="context/getImage|nothing"><p class="discreet" tal:condition="context/imageCaption|nothing">
               <metal:field use-macro="python:context.widget('imageCaption', mode='view')">
               Image Caption
               </metal:field>
-            </p>
-            <div class="visualClear">
+            </p></tal:ifimg>
+            <div id="social_buttons" class="visualClear">
                 <div tal:content="structure context/@@rate-if-you-dare"/>
                  <div style="float: left;">
                     <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
