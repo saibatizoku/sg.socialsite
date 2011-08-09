@@ -19,6 +19,7 @@ jQuery(function(jq){
 
                     /* update the class */
                     if (action == 'form.lovinit'){
+                        form.find('.thumbs-down').removeClass('hidethumb');
                         form.find('.thumbs-down').removeClass('selected');
                         form.find('.thumbs-up').addClass('selected');
                     } else {
