@@ -12,7 +12,10 @@ jQuery(function(jq){
             jq.post(form.attr("action"),action+'=FOOBAR', 
                 function(data) {
                     /* update the text */
-                    totalResults.text(data.ups-data.downs);
+                    upResults.text(data.ups);
+                    downResults.text(data.downs);
+                    //totalResults.text(data.ups-data.downs);
+                    totalResults.text(data.ups);
 
                     /* update the class */
                     if (action == 'form.lovinit'){
