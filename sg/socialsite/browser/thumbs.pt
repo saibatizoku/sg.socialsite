@@ -25,7 +25,7 @@
                                     disabled python:not canRate and 'disabled' or '';"/>
         </span>
         <span
-            tal:attributes="class   python:'thumbs-down' + (myVote==-1 or myVote==0 and ' selected' or '')">
+            tal:attributes="class   python:'thumbs-down' + (myVote==-1 and ' selected' or '')">
             <input type="submit" name="form.hatedit" value="Ugh"
                 class="allowMultiSubmit dislike-button"
                  tal:attributes="id  string:${context/id}_submit_like;
