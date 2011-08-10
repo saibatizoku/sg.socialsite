@@ -11,6 +11,11 @@
 
     <adapter name="total_ratings" factory=".indexers.total_ratings" />
 
+    <class class="plone.app.discussion.comment.Comment">
+        <implements interface="cioppino.twothumbs.interfaces.ILoveThumbsDontYou
+                               zope.annotation.interfaces.IAttributeAnnotatable" />
+    </class>
+
     <genericsetup:registerProfile
         name="default"
         title="sg.socialsite"

@@ -1,6 +1,6 @@
 jQuery(function(jq){
 
-    jq('#content').delegate(".thumb-rating form input", "click", (function(event){
+    jq('#portal-columns').delegate(".thumb-rating form input", "click", (function(event){
         event.preventDefault();
         var form = jq(this).closest('form');
         var action = jq(this).attr('name');
