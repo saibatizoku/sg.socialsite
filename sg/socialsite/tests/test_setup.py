@@ -16,7 +16,7 @@ JS = (
 CSS = (
     '++resource++sg.socialsite.css/social.css',
     )
-
+DEMO_CONTENT_IDS = ['codigo', 'historias', 'preguntas']
 
 class TestInstall(unittest.TestCase):
     """ensure product is properly installed"""
@@ -45,9 +45,13 @@ class TestInstall(unittest.TestCase):
             self.failUnless(js in portal_js.getResourceIds(),
                             '%s javascript not installed' % js)
 
+    def test_demo_content(self):
+        for folder_id in DEMO_CONTENT_IDS:
+            self.failUnless(folder_id in self.portal.objectIds())
+
     def test_workflow(self):
         wf_tool = getToolByName(self.portal, 'portal_workflow')
-        self.failUnless(wf_tool.getDefaultChain(), ('one_state_flow',))
+        self.assertEquals(wf_tool.getDefaultChain(), ('one_state_workflow',))
 
 
 class TestUninstall(unittest.TestCase):
