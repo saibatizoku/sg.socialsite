@@ -26,6 +26,7 @@ setup(name='sg.socialsite',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'archetypes.schemaextender',
           'plone.app.discussion',
           'cioppino.twothumbs',
           'sg.questions',

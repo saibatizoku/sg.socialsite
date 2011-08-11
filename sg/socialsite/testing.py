@@ -12,10 +12,12 @@ class Fixture(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
+        import archetypes.schemaextender
         import cioppino.twothumbs
         import sg.pastebin
         import sg.questions
         import sg.socialsite
+        self.loadZCML(package=archetypes.schemaextender)
         self.loadZCML(package=cioppino.twothumbs)
         self.loadZCML(package=sg.pastebin)
         self.loadZCML(package=sg.questions)
