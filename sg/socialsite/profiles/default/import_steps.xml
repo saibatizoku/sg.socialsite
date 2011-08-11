@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="sg-social-various" version="20110811-01"
+              handler="sg.socialsite.setuphandlers.importVarious"
+              title="Performs adjustments to the portal object using various portal_* tools.">
+  <dependency step="plone-final" />
+  SG Social Site adjustments.
+ </import-step>
+</import-steps>
