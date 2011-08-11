@@ -9,12 +9,37 @@
 
     <include package=".browser" />
 
-    <adapter name="total_ratings" factory=".indexers.total_ratings" />
-
     <class class="plone.app.discussion.comment.Comment">
-        <implements interface="cioppino.twothumbs.interfaces.ILoveThumbsDontYou
-                               zope.annotation.interfaces.IAttributeAnnotatable" />
+        <implements
+            interface="zope.annotation.interfaces.IAttributeAnnotatable"
+            />
     </class>
+
+    <subscriber
+        for="plone.app.discussion.comment.Comment
+             zope.lifecycleevent.IObjectCreatedEvent"
+        handler=".subscribers.contextThumbs"
+        />
+
+    <subscriber
+        for="sg.questions.question.IQuestion
+             zope.lifecycleevent.IObjectCreatedEvent"
+        handler=".subscribers.contextThumbs"
+        />
+
+    <subscriber
+        for="Products.ATContentTypes.interfaces.news.IATNewsItem
+             zope.lifecycleevent.IObjectCreatedEvent"
+        handler=".subscribers.contextThumbs"
+        />
+
+    <subscriber
+        for="sg.pastebin.paste.IPaste
+             zope.lifecycleevent.IObjectCreatedEvent"
+        handler=".subscribers.contextThumbs"
+        />
+
+    <adapter name="total_ratings" factory=".indexers.total_ratings" />
 
     <genericsetup:registerProfile
         name="default"
