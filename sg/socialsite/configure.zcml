@@ -17,25 +17,25 @@
 
     <subscriber
         for="plone.app.discussion.comment.Comment
-             zope.lifecycleevent.IObjectCreatedEvent"
+            zope.app.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.contextThumbs"
         />
 
     <subscriber
         for="sg.questions.question.IQuestion
-             zope.lifecycleevent.IObjectCreatedEvent"
+             zope.app.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.contextThumbs"
         />
 
     <subscriber
         for="Products.ATContentTypes.interfaces.news.IATNewsItem
-             zope.lifecycleevent.IObjectCreatedEvent"
+             zope.app.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.contextThumbs"
         />
 
     <subscriber
         for="sg.pastebin.paste.IPaste
-             zope.lifecycleevent.IObjectCreatedEvent"
+             zope.app.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.contextThumbs"
         />
 
