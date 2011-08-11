@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_css" meta_type="Stylesheets Registry">
+    <stylesheet
+        id="++resource++sg.socialsite.css/social.css"
+        remove="True"
+        />
+</object>

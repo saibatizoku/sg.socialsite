@@ -11,6 +11,11 @@
       directory="javascripts"
       />
 
+    <browser:resourceDirectory
+      name="sg.socialsite.css"
+      directory="stylesheets"
+      />
+
     <browser:resource
         name="comments.jpg"
         image="comentarios.jpg"

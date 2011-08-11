@@ -14,7 +14,7 @@ JS = (
     '++resource++sg.socialsite.javascripts/onethumb.js',
     )
 CSS = (
-    '++resource++sg.socialsite.css/onethumb.css',
+    '++resource++sg.socialsite.css/social.css',
     )
 
 
