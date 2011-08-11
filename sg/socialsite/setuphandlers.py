@@ -20,21 +20,24 @@ class SocialSiteSetupHandler:
                 docobj = portal[doc]
                 docobj.setExcludeFromNav(True)
                 docobj.reindexObject()
-        _createObjectByType('Folder', portal, id='codigo', title=u"Código",
+        if 'codigo' not in existing:
+            _createObjectByType('Folder', portal, id='codigo', title=u"Código",
                 description=u"Sección de código fuente")
         codigo = portal['codigo']
         codigo.setConstrainTypesMode(constraintypes.ENABLED)
         codigo.setLocallyAllowedTypes(['sg.pastebin.paste'])
         codigo.setImmediatelyAddableTypes(['sg.pastebin.paste'])
         codigo.reindexObject()
-        _createObjectByType('Folder', portal, id='historias', title=u"Historias",
+        if 'historias' not in existing:
+            _createObjectByType('Folder', portal, id='historias', title=u"Historias",
                 description=u"Sección de historias de los usuarios")
         historias = portal['historias']
         historias.setConstrainTypesMode(constraintypes.ENABLED)
         historias.setLocallyAllowedTypes(['News Item'])
         historias.setImmediatelyAddableTypes(['News Item'])
         historias.reindexObject()
-        _createObjectByType('Folder', portal, id='preguntas', title=u"Preguntas",
+        if 'preguntas' not in existing:
+            _createObjectByType('Folder', portal, id='preguntas', title=u"Preguntas",
                 description=u"Sección de preguntas")
         preguntas = portal['preguntas']
         preguntas.setConstrainTypesMode(constraintypes.ENABLED)
