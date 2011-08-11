@@ -26,16 +26,16 @@ setup(name='sg.socialsite',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'plone.app.discussion',
           'cioppino.twothumbs',
           'sg.questions',
           'sg.pastebin',
       ],
+      extras_require=dict(
+            test = ['plone.app.testing',],
+          ),
       entry_points="""
-      # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
       )

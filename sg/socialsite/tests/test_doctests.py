@@ -1,25 +1,17 @@
-import unittest
-from Testing import ZopeTestCase as ztc
-from sg.socialsite.tests.base import SocialSiteFunctionalTestCase
+# -*- coding: utf-8 -*-
+import unittest2 as unittest
+import doctest
 
-doc_tests = (
-#    'schema_events.txt',
-    )
-functional_tests = (
-    'installation.txt',
-    )
+from plone.testing import layered
+
+from sg.socialsite.testing import FUNCTIONAL_TESTING
+
 
 def test_suite():
-    return unittest.TestSuite(
-        [ztc.FunctionalDocFileSuite(
-            'tests/%s' % f, package='sg.socialsite',
-            test_class=SocialSiteFunctionalTestCase)
-            for f in functional_tests] + 
-        [ztc.ZopeDocFileSuite(
-            'tests/%s' % f, package='sg.socialsite',
-            test_class=SocialSiteFunctionalTestCase)
-            for f in doc_tests],
-        )
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
+    suite = unittest.TestSuite()
+    suite.addTests([
+        layered(doctest.DocFileSuite('installation.txt',
+            optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS),
+            layer=FUNCTIONAL_TESTING),
+    ])
+    return suite
