@@ -41,6 +41,8 @@
 
     <adapter name="total_ratings" factory=".indexers.total_ratings" />
 
+    <adapter factory=".news_extender.NewsExtender" />
+
     <genericsetup:registerProfile
         name="default"
         title="sg.socialsite"
