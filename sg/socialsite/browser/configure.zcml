@@ -16,6 +16,11 @@
       directory="stylesheets"
       />
 
+    <browser:resourceDirectory
+      name="sg.socialsite.images"
+      directory="images"
+      />
+
     <browser:resource
         name="comments.jpg"
         image="comentarios.jpg"

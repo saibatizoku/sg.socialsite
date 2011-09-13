@@ -10,10 +10,10 @@ form.enabled .selected{
     display: none;
 }
 form.enabled input.like-button:hover, form.enabled input.like-button {
-    background-image: url("images/thumbs-up-off.png");
+    background-image: url("++resource++sg.socialsite.images/thumbs-up-off.png");
 }
 form.enabled input.dislike-button:hover, form.enabled input.dislike-button {
-    background-image: url("images/thumbs-up.png");
+    background-image: url("++resource++sg.socialsite.images/thumbs-up.png");
 }
 form.disabled .thumbs-down {
     display: none;
