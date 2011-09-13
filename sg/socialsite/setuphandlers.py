@@ -33,8 +33,8 @@ class SocialSiteSetupHandler:
                 description=u"Sección de historias de los usuarios")
         historias = portal['historias']
         historias.setConstrainTypesMode(constraintypes.ENABLED)
-        historias.setLocallyAllowedTypes(['News Item'])
-        historias.setImmediatelyAddableTypes(['News Item'])
+        historias.setLocallyAllowedTypes(['News Item', 'Link'])
+        historias.setImmediatelyAddableTypes(['News Item', 'Link'])
         historias.reindexObject()
         if 'preguntas' not in existing:
             _createObjectByType('Folder', portal, id='preguntas', title=u"Preguntas",
