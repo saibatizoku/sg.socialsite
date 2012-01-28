@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<object name="portal_javascripts">
-    <javascript id="++resource++sg.socialsite.javascripts/onethumb.js"
-        remove="True"/>
-
-</object>
