@@ -31,6 +31,7 @@ setup(name='sg.socialsite',
           'cioppino.twothumbs',
           'sg.questions',
           'sg.pastebin',
+          'sg.socialtheme',
       ],
       extras_require=dict(
             test = ['plone.app.testing',],
