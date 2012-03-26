@@ -17,11 +17,13 @@ class Fixture(PloneSandboxLayer):
         import sg.pastebin
         import sg.questions
         import sg.socialsite
+        import sg.socialtheme
         self.loadZCML(package=archetypes.schemaextender)
         self.loadZCML(package=cioppino.twothumbs)
         self.loadZCML(package=sg.pastebin)
         self.loadZCML(package=sg.questions)
         self.loadZCML(package=sg.socialsite)
+        self.loadZCML(package=sg.socialtheme)
 
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup

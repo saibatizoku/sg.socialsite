@@ -29,6 +29,8 @@ expected profiles.
     True 
     >>> 'sg.questions:default' in browser.contents
     True 
+    >>> 'sg.socialtheme:default' in browser.contents
+    True 
     
     >>> from plone.app.testing import TEST_USER_ID
     >>> from plone.app.testing import TEST_USER_NAME
