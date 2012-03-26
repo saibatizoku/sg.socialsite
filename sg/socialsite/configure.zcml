@@ -34,6 +34,12 @@
         />
 
     <subscriber
+        for="Products.ATContentTypes.interfaces.link.IATLink
+             zope.app.container.interfaces.IObjectAddedEvent"
+        handler=".subscribers.contextThumbs"
+        />
+
+    <subscriber
         for="sg.pastebin.paste.IPaste
              zope.app.container.interfaces.IObjectAddedEvent"
         handler=".subscribers.contextThumbs"
