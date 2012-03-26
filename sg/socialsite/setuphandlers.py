@@ -46,6 +46,7 @@ class SocialSiteSetupHandler:
     def setupWorkflow(self, portal):
         wf_tool = getToolByName(portal, 'portal_workflow')
         wf_tool.setDefaultChain('one_state_workflow')
+        wf_tool.updateRoleMappings()
 
 
 def importVarious(context):
