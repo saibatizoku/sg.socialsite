@@ -10,12 +10,6 @@ from Products.CMFPlone.utils import getToolByName
 from sg.socialsite.testing import INTEGRATION_TESTING
 
 PROJECTNAME = "sg.socialsite"
-JS = (
-    '++resource++sg.socialsite.javascripts/onethumb.js',
-    )
-CSS = (
-    '++resource++sg.socialsite.css/social.css',
-    )
 DEMO_CONTENT_IDS = ['codigo', 'historias', 'preguntas']
 
 class TestInstall(unittest.TestCase):
@@ -30,20 +24,6 @@ class TestInstall(unittest.TestCase):
         qi = getattr(self.portal, 'portal_quickinstaller')
         self.failUnless(qi.isProductInstalled(PROJECTNAME),
                             '%s not installed' % PROJECTNAME)
-
-    def test_css(self):
-        portal_css = getattr(self.portal, 'portal_css')
-        #print '\n'.join(portal_js.getResourceIds())
-        for css in CSS:
-            self.failUnless(css in portal_css.getResourceIds(),
-                            '%s stylesheet not installed' % css)
-
-    def test_javascripts(self):
-        portal_js = getattr(self.portal, 'portal_javascripts')
-        #print '\n'.join(portal_js.getResourceIds())
-        for js in JS:
-            self.failUnless(js in portal_js.getResourceIds(),
-                            '%s javascript not installed' % js)
 
     def test_demo_content(self):
         for folder_id in DEMO_CONTENT_IDS:
@@ -68,19 +48,6 @@ class TestUninstall(unittest.TestCase):
 
     def test_uninstalled(self):
         self.failIf(self.qi.isProductInstalled(PROJECTNAME))
-
-    def test_css(self):
-        portal_css = getattr(self.portal, 'portal_css')
-        #print '\n'.join(portal_js.getResourceIds())
-        for css in CSS:
-            self.failIf(css in portal_css.getResourceIds(),
-                            '%s stylesheet not uninstalled' % css)
-
-    def test_javascripts(self):
-        portal_js = getattr(self.portal, 'portal_javascripts')
-        for js in JS:
-            self.failIf(js in portal_js.getResourceIds(),
-                        '%s javascript not uninstalled' % js)
 
 
 def test_suite():
