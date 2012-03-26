@@ -3,8 +3,8 @@ from Products.ATContentTypes.lib import constraintypes
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
 
-TO_REMOVE = ['front-page', 'news', 'events']
-TO_EXCLUDE_FROM_NAV = ['Members',]
+TO_REMOVE = ['news', 'events']
+TO_EXCLUDE_FROM_NAV = ['front-page', 'Members',]
 
 
 class SocialSiteSetupHandler:
@@ -12,9 +12,7 @@ class SocialSiteSetupHandler:
         existing = portal.objectIds()
         for doc in TO_REMOVE:
             if doc in existing:
-                docobj = portal[doc]
-                docobj.setExcludeFromNav(True)
-                docobj.reindexObject()
+                del portal[doc]
         for doc in TO_EXCLUDE_FROM_NAV:
             if doc in existing:
                 docobj = portal[doc]
