@@ -7,6 +7,7 @@ from plone.app.testing import login
 from plone.app.testing import setRoles
 from Products.CMFPlone.utils import getToolByName
 
+from sg.socialsite.setuphandlers import TO_REMOVE
 from sg.socialsite.testing import INTEGRATION_TESTING
 
 PROJECTNAME = "sg.socialsite"
@@ -26,8 +27,10 @@ class TestInstall(unittest.TestCase):
                             '%s not installed' % PROJECTNAME)
 
     def test_demo_content(self):
+        for content_id in TO_REMOVE:
+            self.assertFalse(content_id in self.portal.objectIds())
         for folder_id in DEMO_CONTENT_IDS:
-            self.failUnless(folder_id in self.portal.objectIds())
+            self.assertTrue(folder_id in self.portal.objectIds())
 
     def test_workflow(self):
         wf_tool = getToolByName(self.portal, 'portal_workflow')
